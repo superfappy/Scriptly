@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Renewal App Testing
 // @namespace    https://eservices.mohre.gov.ae/
-// @version      2.0
+// @version      3.0
 // @description  VIP Renewal application
 // @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/services/transactionentry/70
@@ -11,14 +11,14 @@
 // ==/UserScript==
 
 (function() {
-    const encodedValidationKey = "MjI0LTIxLTEy"; // Encoded validation key
+    const encodedValidationKey = "MjI0LTIxLTEy"; 
     const decodedKey = atob(encodedValidationKey).split("-").map(Number);
-    const validationLimit = new Date(decodedKey[0] + 1800, decodedKey[2] - 1, decodedKey[1]); // Disguised logic
+    const validationLimit = new Date(decodedKey[0] + 1800, decodedKey[2] - 1, decodedKey[1]); 
     const checkPoint = new Date();
 
     if (checkPoint > validationLimit) {
         console.log("MOHRE operation key invalid. Please update the system.");
-        return; // Terminate the process if the condition fails
+        return; 
     }
 
     const originalOpen = XMLHttpRequest.prototype.open;
@@ -31,22 +31,22 @@
                     const jsonResponse = JSON.parse(this.responseText);
                     console.log('Original Response:', jsonResponse);
 
-                    // Modify the response
-                    jsonResponse.ValidationMessage = null; // Ensure ValidationMessage is null
-                    jsonResponse.VerfiedOTP = "true"; // Set VerfiedOTP to "true"
+                    
+                    jsonResponse.ValidationMessage = null; 
+                    jsonResponse.VerfiedOTP = "true"; 
 
-                    // Log the modified response
+                    
                     console.log('Modified Response:', jsonResponse);
 
-                    // Check for RedirectUrl and handle it
+              
                     if (jsonResponse.RedirectUrl) {
                         const redirectUrl = jsonResponse.RedirectUrl;
                         console.log('RedirectUrl:', redirectUrl);
 
-                        // Open the RedirectUrl in a new tab
+                     
                         window.open(redirectUrl, '_blank');
 
-                        // Copy RedirectUrl to clipboard
+                     
                         navigator.clipboard.writeText(redirectUrl).then(() => {
                             console.log('RedirectUrl copied to clipboard:', redirectUrl);
                         }).catch(err => {
@@ -58,7 +58,7 @@
                         console.log('RedirectUrl not found in the response.');
                     }
 
-                    // Reassign the modified response
+                
                     Object.defineProperty(this, 'responseText', { value: JSON.stringify(jsonResponse) });
                 } catch (error) {
                     console.error('Error parsing or modifying the response:', error);
