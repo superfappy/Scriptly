@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Cancellation Submission Testing
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      1.0
 // @description  Intercept specific Tasheel transactions, modify response validations, and open the new URL with NewKey in a new tab.
 // @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/services/transactionentry/47
