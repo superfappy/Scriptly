@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Modify Contract App Testing
 // @namespace    https://eservices.mohre.gov.ae/
-// @version      1.2
+// @version      1.3
 // @description  Intercepts requests to /TasheelWeb/services/transactionentry/85, processes RedirectUrl, and modifies response validations.
 // @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/*
