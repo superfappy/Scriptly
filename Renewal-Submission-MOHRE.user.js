@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Renewal Submission Testing
 // @namespace    https://eservices.mohre.gov.ae/
-// @version      1.3
+// @version      2.0
 // @description  Intercepts requests to /TasheelWeb/services/transactionentry/228, preferring RedirectUrl if present, or constructs URL with NewKey if RedirectUrl is not found.
 // @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/*
