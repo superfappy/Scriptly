@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Renewal App Testing
 // @namespace    https://eservices.mohre.gov.ae/
-// @version      1.0
+// @version      2.0
 // @description  VIP Renewal application
 // @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/services/transactionentry/70
