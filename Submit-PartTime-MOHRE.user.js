@@ -3,9 +3,9 @@
 // @namespace    https://eservices.mohre.gov.ae/
 // @version      1.2
 // @description  Intercepts requests to /TasheelWeb/services/transactionentry/168, modifies response validations, and opens a new URL with the extracted UniqueNumber.
-// @author       YourName
+// @author       Scriptly
 // @match        https://eservices.mohre.gov.ae/TasheelWeb/*
-// @grant        Scriptly
+// @grant        none
 // @updateURL    https://raw.githubusercontent.com/superfappy/Scriptly/main/Submit-PartTime-MOHRE.user.js
 // @downloadURL  https://raw.githubusercontent.com/superfappy/Scriptly/main/Submit-PartTime-MOHRE.user.js
 // ==/UserScript==
